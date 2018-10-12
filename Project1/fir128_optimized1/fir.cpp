@@ -26,7 +26,6 @@ void fir (data_t *y, data_t x)
 	for(int k = N-1; k > 0; k--)
 	{
 		//Push the buffer down.
-		//#pragma HLS unroll factor = 64
 		buff[k] = buff[k-1];
 		//Multiple and accumulate.
 		*y = *y + (buff[k]*c[k]);
