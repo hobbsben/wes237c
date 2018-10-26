@@ -1,0 +1,281 @@
+
+
+================================================================
+== Vivado HLS Report for 'phasedetector'
+================================================================
+* Date:           Thu Oct 25 18:44:42 2018
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        phasedetector
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.745|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------+----------------+-----+-----+-----+-----+---------+
+        |                           |                |  Latency  |  Interval | Pipeline|
+        |          Instance         |     Module     | min | max | min | max |   Type  |
+        +---------------------------+----------------+-----+-----+-----+-----+---------+
+        |grp_cordiccart2pol_fu_371  |cordiccart2pol  |   27|   28|   27|   28|   none  |
+        |grp_firQ1_fu_377           |firQ1           |   46|   46|   46|   46|   none  |
+        |grp_firQ2_fu_446           |firQ2           |   46|   46|   46|   46|   none  |
+        |grp_firI1_fu_515           |firI1           |   46|   46|   46|   46|   none  |
+        |grp_firI2_fu_584           |firI2           |   46|   46|   46|   46|   none  |
+        +---------------------------+----------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|  84 ~ 85 |          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    148|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        0|     12|   14499|  20926|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    284|
+|Register         |        -|      -|     660|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|     12|   15159|  21358|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      5|      14|     40|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +----------------------------+--------------------------+---------+-------+------+-------+
+    |          Instance          |          Module          | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +----------------------------+--------------------------+---------+-------+------+-------+
+    |grp_cordiccart2pol_fu_371   |cordiccart2pol            |        0|      4|  4369|  11286|
+    |grp_firI1_fu_515            |firI1                     |        0|      1|  2413|   2166|
+    |grp_firI2_fu_584            |firI2                     |        0|      1|  2413|   2166|
+    |grp_firQ1_fu_377            |firQ1                     |        0|      1|  2413|   2212|
+    |grp_firQ2_fu_446            |firQ2                     |        0|      1|  2413|   2212|
+    |phasedetector_CTRL_s_axi_U  |phasedetector_CTRL_s_axi  |        0|      0|    68|    104|
+    |phasedetector_fadg8j_U37    |phasedetector_fadg8j      |        0|      2|   205|    390|
+    |phasedetector_fsuhbi_U38    |phasedetector_fsuhbi      |        0|      2|   205|    390|
+    +----------------------------+--------------------------+---------+-------+------+-------+
+    |Total                       |                          |        0|     12| 14499|  20926|
+    +----------------------------+--------------------------+---------+-------+------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |          Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |i_1_fu_670_p2                    |     +    |      0|  0|  38|          31|           1|
+    |I_data_0_load_A                  |    and   |      0|  0|   2|           1|           1|
+    |I_data_0_load_B                  |    and   |      0|  0|   2|           1|           1|
+    |I_last_V_0_load_A                |    and   |      0|  0|   2|           1|           1|
+    |I_last_V_0_load_B                |    and   |      0|  0|   2|           1|           1|
+    |Q_data_0_load_A                  |    and   |      0|  0|   2|           1|           1|
+    |Q_data_0_load_B                  |    and   |      0|  0|   2|           1|           1|
+    |R_data_1_load_A                  |    and   |      0|  0|   2|           1|           1|
+    |R_data_1_load_B                  |    and   |      0|  0|   2|           1|           1|
+    |R_last_V_1_load_A                |    and   |      0|  0|   2|           1|           1|
+    |R_last_V_1_load_B                |    and   |      0|  0|   2|           1|           1|
+    |Theta_data_1_load_A              |    and   |      0|  0|   2|           1|           1|
+    |Theta_data_1_load_B              |    and   |      0|  0|   2|           1|           1|
+    |Theta_last_V_1_load_A            |    and   |      0|  0|   2|           1|           1|
+    |Theta_last_V_1_load_B            |    and   |      0|  0|   2|           1|           1|
+    |I_data_0_state_cmp_full          |   icmp   |      0|  0|   8|           2|           1|
+    |I_last_V_0_state_cmp_full        |   icmp   |      0|  0|   8|           2|           1|
+    |Q_data_0_state_cmp_full          |   icmp   |      0|  0|   8|           2|           1|
+    |R_data_1_state_cmp_full          |   icmp   |      0|  0|   8|           2|           1|
+    |R_last_V_1_state_cmp_full        |   icmp   |      0|  0|   8|           2|           1|
+    |Theta_data_1_state_cmp_full      |   icmp   |      0|  0|   8|           2|           1|
+    |Theta_last_V_1_state_cmp_full    |   icmp   |      0|  0|   8|           2|           1|
+    |tmp_fu_665_p2                    |   icmp   |      0|  0|  18|          32|          32|
+    |ap_block_state11_io              |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state2                  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state3                  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state4_on_subcall_done  |    or    |      0|  0|   2|           1|           1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |Total                            |          |      0|  0| 148|          95|          58|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |I_TDATA_blk_n            |   9|          2|    1|          2|
+    |I_data_0_data_out        |   9|          2|   32|         64|
+    |I_data_0_state           |  15|          3|    2|          6|
+    |I_last_V_0_data_out      |   9|          2|    1|          2|
+    |I_last_V_0_state         |  15|          3|    2|          6|
+    |Q_TDATA_blk_n            |   9|          2|    1|          2|
+    |Q_data_0_data_out        |   9|          2|   32|         64|
+    |Q_data_0_state           |  15|          3|    2|          6|
+    |Q_last_V_0_state         |  15|          3|    2|          6|
+    |R_TDATA_blk_n            |   9|          2|    1|          2|
+    |R_data_1_data_out        |   9|          2|   32|         64|
+    |R_data_1_state           |  15|          3|    2|          6|
+    |R_last_V_1_data_out      |   9|          2|    1|          2|
+    |R_last_V_1_state         |  15|          3|    2|          6|
+    |Theta_TDATA_blk_n        |   9|          2|    1|          2|
+    |Theta_data_1_data_out    |   9|          2|   32|         64|
+    |Theta_data_1_state       |  15|          3|    2|          6|
+    |Theta_last_V_1_data_out  |   9|          2|    1|          2|
+    |Theta_last_V_1_state     |  15|          3|    2|          6|
+    |ap_NS_fsm                |  56|         13|    1|         13|
+    |i_reg_360                |   9|          2|   31|         62|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    | 284|         61|  183|        393|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------+----+----+-----+-----------+
+    |                  Name                  | FF | LUT| Bits| Const Bits|
+    +----------------------------------------+----+----+-----+-----------+
+    |I_data_0_payload_A                      |  32|   0|   32|          0|
+    |I_data_0_payload_B                      |  32|   0|   32|          0|
+    |I_data_0_reg_715                        |  32|   0|   32|          0|
+    |I_data_0_sel_rd                         |   1|   0|    1|          0|
+    |I_data_0_sel_wr                         |   1|   0|    1|          0|
+    |I_data_0_state                          |   2|   0|    2|          0|
+    |I_last_V_0_payload_A                    |   1|   0|    1|          0|
+    |I_last_V_0_payload_B                    |   1|   0|    1|          0|
+    |I_last_V_0_sel_rd                       |   1|   0|    1|          0|
+    |I_last_V_0_sel_wr                       |   1|   0|    1|          0|
+    |I_last_V_0_state                        |   2|   0|    2|          0|
+    |I_last_V_tmp_reg_721                    |   1|   0|    1|          0|
+    |Q_data_0_payload_A                      |  32|   0|   32|          0|
+    |Q_data_0_payload_B                      |  32|   0|   32|          0|
+    |Q_data_0_sel_rd                         |   1|   0|    1|          0|
+    |Q_data_0_sel_wr                         |   1|   0|    1|          0|
+    |Q_data_0_state                          |   2|   0|    2|          0|
+    |Q_data_1_reg_727                        |  32|   0|   32|          0|
+    |Q_last_V_0_state                        |   2|   0|    2|          0|
+    |R_data_1_payload_A                      |  32|   0|   32|          0|
+    |R_data_1_payload_B                      |  32|   0|   32|          0|
+    |R_data_1_sel_rd                         |   1|   0|    1|          0|
+    |R_data_1_sel_wr                         |   1|   0|    1|          0|
+    |R_data_1_state                          |   2|   0|    2|          0|
+    |R_last_V_1_payload_A                    |   1|   0|    1|          0|
+    |R_last_V_1_payload_B                    |   1|   0|    1|          0|
+    |R_last_V_1_sel_rd                       |   1|   0|    1|          0|
+    |R_last_V_1_sel_wr                       |   1|   0|    1|          0|
+    |R_last_V_1_state                        |   2|   0|    2|          0|
+    |Theta_data_1_payload_A                  |  32|   0|   32|          0|
+    |Theta_data_1_payload_B                  |  32|   0|   32|          0|
+    |Theta_data_1_sel_rd                     |   1|   0|    1|          0|
+    |Theta_data_1_sel_wr                     |   1|   0|    1|          0|
+    |Theta_data_1_state                      |   2|   0|    2|          0|
+    |Theta_last_V_1_payload_A                |   1|   0|    1|          0|
+    |Theta_last_V_1_payload_B                |   1|   0|    1|          0|
+    |Theta_last_V_1_sel_rd                   |   1|   0|    1|          0|
+    |Theta_last_V_1_sel_wr                   |   1|   0|    1|          0|
+    |Theta_last_V_1_state                    |   2|   0|    2|          0|
+    |ap_CS_fsm                               |  12|   0|   12|          0|
+    |grp_cordiccart2pol_fu_371_ap_start_reg  |   1|   0|    1|          0|
+    |grp_firI1_fu_515_ap_start_reg           |   1|   0|    1|          0|
+    |grp_firI2_fu_584_ap_start_reg           |   1|   0|    1|          0|
+    |grp_firQ1_fu_377_ap_start_reg           |   1|   0|    1|          0|
+    |grp_firQ2_fu_446_ap_start_reg           |   1|   0|    1|          0|
+    |i_1_reg_710                             |  31|   0|   31|          0|
+    |i_reg_360                               |  31|   0|   31|          0|
+    |length_read_reg_702                     |  32|   0|   32|          0|
+    |res_1_reg_733                           |  32|   0|   32|          0|
+    |res_2_reg_738                           |  32|   0|   32|          0|
+    |res_3_reg_743                           |  32|   0|   32|          0|
+    |res_4_reg_748                           |  32|   0|   32|          0|
+    |x_reg_753                               |  32|   0|   32|          0|
+    |y_reg_758                               |  32|   0|   32|          0|
+    +----------------------------------------+----+----+-----+-----------+
+    |Total                                   | 660|   0|  660|          0|
+    +----------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+---------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  | Source Object |    C Type    |
++--------------------+-----+-----+------------+---------------+--------------+
+|s_axi_CTRL_AWVALID  |  in |    1|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_AWREADY  | out |    1|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_AWADDR   |  in |    5|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_WVALID   |  in |    1|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_WREADY   | out |    1|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_WDATA    |  in |   32|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_WSTRB    |  in |    4|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_ARVALID  |  in |    1|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_ARREADY  | out |    1|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_ARADDR   |  in |    5|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_RVALID   | out |    1|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_RREADY   |  in |    1|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_RDATA    | out |   32|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_RRESP    | out |    2|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_BVALID   | out |    1|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_BREADY   |  in |    1|    s_axi   |      CTRL     |    scalar    |
+|s_axi_CTRL_BRESP    | out |    2|    s_axi   |      CTRL     |    scalar    |
+|ap_clk              |  in |    1| ap_ctrl_hs | phasedetector | return value |
+|ap_rst_n            |  in |    1| ap_ctrl_hs | phasedetector | return value |
+|ap_start            |  in |    1| ap_ctrl_hs | phasedetector | return value |
+|ap_done             | out |    1| ap_ctrl_hs | phasedetector | return value |
+|ap_idle             | out |    1| ap_ctrl_hs | phasedetector | return value |
+|ap_ready            | out |    1| ap_ctrl_hs | phasedetector | return value |
+|I_TDATA             |  in |   32|    axis    |     I_data    |    pointer   |
+|I_TVALID            |  in |    1|    axis    |    I_last_V   |    pointer   |
+|I_TREADY            | out |    1|    axis    |    I_last_V   |    pointer   |
+|I_TLAST             |  in |    1|    axis    |    I_last_V   |    pointer   |
+|Q_TDATA             |  in |   32|    axis    |     Q_data    |    pointer   |
+|Q_TVALID            |  in |    1|    axis    |    Q_last_V   |    pointer   |
+|Q_TREADY            | out |    1|    axis    |    Q_last_V   |    pointer   |
+|Q_TLAST             |  in |    1|    axis    |    Q_last_V   |    pointer   |
+|R_TDATA             | out |   32|    axis    |     R_data    |    pointer   |
+|R_TVALID            | out |    1|    axis    |    R_last_V   |    pointer   |
+|R_TREADY            |  in |    1|    axis    |    R_last_V   |    pointer   |
+|R_TLAST             | out |    1|    axis    |    R_last_V   |    pointer   |
+|Theta_TDATA         | out |   32|    axis    |   Theta_data  |    pointer   |
+|Theta_TVALID        | out |    1|    axis    |  Theta_last_V |    pointer   |
+|Theta_TREADY        |  in |    1|    axis    |  Theta_last_V |    pointer   |
+|Theta_TLAST         | out |    1|    axis    |  Theta_last_V |    pointer   |
++--------------------+-----+-----+------------+---------------+--------------+
+
