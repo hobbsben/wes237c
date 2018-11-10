@@ -1,0 +1,517 @@
+
+
+================================================================
+== Vivado HLS Report for 'dft1'
+================================================================
+* Date:           Fri Nov  9 20:05:32 2018
+
+* Version:        2017.1 (Build 1846317 on Thu Jun 22 18:17:09 MDT 2017)
+* Project:        hls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      7.42|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  557313|  557313|  557313|  557313|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |             |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- loop_out1  |  557312|  557312|      4354|          -|          -|   128|    no    |
+        | + loop_in1  |    4352|    4352|        17|          -|          -|   256|    no    |
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 19
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+3 --> 
+	4  / (!exitcond)
+	2  / (exitcond)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	3  / true
+* FSM state operations: 
+
+ <State 1>: 1.77ns
+ST_1: StgValue_20 (7)  [1/1] 1.77ns  loc: dft.cpp:21
+:0  br label %1
+
+
+ <State 2>: 1.92ns
+ST_2: n (9)  [1/1] 0.00ns
+:0  %n = phi i8 [ 0, %0 ], [ %n_2, %5 ]
+
+ST_2: n_cast (10)  [1/1] 0.00ns  loc: dft.cpp:21
+:1  %n_cast = zext i8 %n to i32
+
+ST_2: exitcond1 (11)  [1/1] 1.55ns  loc: dft.cpp:21
+:2  %exitcond1 = icmp eq i8 %n, -128
+
+ST_2: empty (12)  [1/1] 0.00ns
+:3  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 128, i64 128, i64 128)
+
+ST_2: n_2 (13)  [1/1] 1.92ns  loc: dft.cpp:21
+:4  %n_2 = add i8 %n, 1
+
+ST_2: StgValue_26 (14)  [1/1] 0.00ns  loc: dft.cpp:21
+:5  br i1 %exitcond1, label %6, label %2
+
+ST_2: StgValue_27 (16)  [1/1] 0.00ns  loc: dft.cpp:22
+:0  call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str2) nounwind
+
+ST_2: tmp_8 (17)  [1/1] 0.00ns  loc: dft.cpp:22
+:1  %tmp_8 = call i32 (...)* @_ssdm_op_SpecRegionBegin([10 x i8]* @p_str2)
+
+ST_2: real_sample_addr (18)  [1/1] 0.00ns  loc: dft.cpp:28
+:2  %real_sample_addr = getelementptr [256 x float]* %real_sample, i32 0, i32 %n_cast
+
+ST_2: imag_sample_addr (19)  [1/1] 0.00ns  loc: dft.cpp:28
+:3  %imag_sample_addr = getelementptr [256 x float]* %imag_sample, i32 0, i32 %n_cast
+
+ST_2: StgValue_31 (20)  [1/1] 1.77ns  loc: dft.cpp:23
+:4  br label %3
+
+ST_2: StgValue_32 (58)  [1/1] 0.00ns  loc: dft.cpp:33
+:0  ret void
+
+
+ <State 3>: 7.42ns
+ST_3: w (22)  [1/1] 0.00ns
+:0  %w = phi i9 [ 0, %2 ], [ %w_3, %4 ]
+
+ST_3: w_cast2 (23)  [1/1] 0.00ns  loc: dft.cpp:23
+:1  %w_cast2 = zext i9 %w to i32
+
+ST_3: tmp (24)  [1/1] 0.00ns  loc: dft.cpp:26
+:2  %tmp = trunc i9 %w to i8
+
+ST_3: exitcond (25)  [1/1] 1.66ns  loc: dft.cpp:23
+:3  %exitcond = icmp eq i9 %w, -256
+
+ST_3: empty_5 (26)  [1/1] 0.00ns
+:4  %empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256)
+
+ST_3: w_3 (27)  [1/1] 1.94ns  loc: dft.cpp:23
+:5  %w_3 = add i9 1, %w
+
+ST_3: StgValue_39 (28)  [1/1] 0.00ns  loc: dft.cpp:23
+:6  br i1 %exitcond, label %5, label %4
+
+ST_3: ind (31)  [1/1] 4.17ns  loc: dft.cpp:26
+:1  %ind = mul i8 %n, %tmp
+
+ST_3: ind_cast (32)  [1/1] 0.00ns  loc: dft.cpp:26
+:2  %ind_cast = zext i8 %ind to i32
+
+ST_3: cos_coefficients_tab (33)  [1/1] 0.00ns  loc: dft.cpp:28
+:3  %cos_coefficients_tab = getelementptr inbounds [256 x float]* @cos_coefficients_tab_1, i32 0, i32 %ind_cast
+
+ST_3: cos_coefficients_tab_3 (34)  [2/2] 3.25ns  loc: dft.cpp:28
+:4  %cos_coefficients_tab_3 = load float* %cos_coefficients_tab, align 4
+
+ST_3: real_sample_load (35)  [2/2] 3.25ns  loc: dft.cpp:28
+:5  %real_sample_load = load float* %real_sample_addr, align 4
+
+ST_3: sin_coefficients_tab (37)  [1/1] 0.00ns  loc: dft.cpp:28
+:7  %sin_coefficients_tab = getelementptr inbounds [256 x float]* @sin_coefficients_tab_1, i32 0, i32 %ind_cast
+
+ST_3: sin_coefficients_tab_3 (38)  [2/2] 3.25ns  loc: dft.cpp:28
+:8  %sin_coefficients_tab_3 = load float* %sin_coefficients_tab, align 4
+
+ST_3: imag_sample_load (39)  [2/2] 3.25ns  loc: dft.cpp:28
+:9  %imag_sample_load = load float* %imag_sample_addr, align 4
+
+ST_3: dft_real_addr (42)  [1/1] 0.00ns  loc: dft.cpp:28
+:12  %dft_real_addr = getelementptr [256 x float]* %dft_real, i32 0, i32 %w_cast2
+
+ST_3: dft_imag_addr (49)  [1/1] 0.00ns  loc: dft.cpp:29
+:19  %dft_imag_addr = getelementptr [256 x float]* %dft_imag, i32 0, i32 %w_cast2
+
+ST_3: empty_6 (55)  [1/1] 0.00ns  loc: dft.cpp:31
+:0  %empty_6 = call i32 (...)* @_ssdm_op_SpecRegionEnd([10 x i8]* @p_str2, i32 %tmp_8)
+
+ST_3: StgValue_51 (56)  [1/1] 0.00ns  loc: dft.cpp:21
+:1  br label %1
+
+
+ <State 4>: 3.25ns
+ST_4: cos_coefficients_tab_3 (34)  [1/2] 3.25ns  loc: dft.cpp:28
+:4  %cos_coefficients_tab_3 = load float* %cos_coefficients_tab, align 4
+
+ST_4: real_sample_load (35)  [1/2] 3.25ns  loc: dft.cpp:28
+:5  %real_sample_load = load float* %real_sample_addr, align 4
+
+ST_4: sin_coefficients_tab_3 (38)  [1/2] 3.25ns  loc: dft.cpp:28
+:8  %sin_coefficients_tab_3 = load float* %sin_coefficients_tab, align 4
+
+ST_4: imag_sample_load (39)  [1/2] 3.25ns  loc: dft.cpp:28
+:9  %imag_sample_load = load float* %imag_sample_addr, align 4
+
+
+ <State 5>: 5.70ns
+ST_5: tmp_s (36)  [4/4] 5.70ns  loc: dft.cpp:28
+:6  %tmp_s = fmul float %cos_coefficients_tab_3, %real_sample_load
+
+ST_5: tmp_1 (40)  [4/4] 5.70ns  loc: dft.cpp:28
+:10  %tmp_1 = fmul float %sin_coefficients_tab_3, %imag_sample_load
+
+ST_5: tmp_4 (46)  [4/4] 5.70ns  loc: dft.cpp:29
+:16  %tmp_4 = fmul float %sin_coefficients_tab_3, %real_sample_load
+
+ST_5: tmp_5 (47)  [4/4] 5.70ns  loc: dft.cpp:29
+:17  %tmp_5 = fmul float %cos_coefficients_tab_3, %imag_sample_load
+
+
+ <State 6>: 5.70ns
+ST_6: tmp_s (36)  [3/4] 5.70ns  loc: dft.cpp:28
+:6  %tmp_s = fmul float %cos_coefficients_tab_3, %real_sample_load
+
+ST_6: tmp_1 (40)  [3/4] 5.70ns  loc: dft.cpp:28
+:10  %tmp_1 = fmul float %sin_coefficients_tab_3, %imag_sample_load
+
+ST_6: tmp_4 (46)  [3/4] 5.70ns  loc: dft.cpp:29
+:16  %tmp_4 = fmul float %sin_coefficients_tab_3, %real_sample_load
+
+ST_6: tmp_5 (47)  [3/4] 5.70ns  loc: dft.cpp:29
+:17  %tmp_5 = fmul float %cos_coefficients_tab_3, %imag_sample_load
+
+
+ <State 7>: 5.70ns
+ST_7: tmp_s (36)  [2/4] 5.70ns  loc: dft.cpp:28
+:6  %tmp_s = fmul float %cos_coefficients_tab_3, %real_sample_load
+
+ST_7: tmp_1 (40)  [2/4] 5.70ns  loc: dft.cpp:28
+:10  %tmp_1 = fmul float %sin_coefficients_tab_3, %imag_sample_load
+
+ST_7: tmp_4 (46)  [2/4] 5.70ns  loc: dft.cpp:29
+:16  %tmp_4 = fmul float %sin_coefficients_tab_3, %real_sample_load
+
+ST_7: tmp_5 (47)  [2/4] 5.70ns  loc: dft.cpp:29
+:17  %tmp_5 = fmul float %cos_coefficients_tab_3, %imag_sample_load
+
+
+ <State 8>: 5.70ns
+ST_8: tmp_s (36)  [1/4] 5.70ns  loc: dft.cpp:28
+:6  %tmp_s = fmul float %cos_coefficients_tab_3, %real_sample_load
+
+ST_8: tmp_1 (40)  [1/4] 5.70ns  loc: dft.cpp:28
+:10  %tmp_1 = fmul float %sin_coefficients_tab_3, %imag_sample_load
+
+ST_8: tmp_4 (46)  [1/4] 5.70ns  loc: dft.cpp:29
+:16  %tmp_4 = fmul float %sin_coefficients_tab_3, %real_sample_load
+
+ST_8: tmp_5 (47)  [1/4] 5.70ns  loc: dft.cpp:29
+:17  %tmp_5 = fmul float %cos_coefficients_tab_3, %imag_sample_load
+
+
+ <State 9>: 7.26ns
+ST_9: tmp_2 (41)  [5/5] 7.26ns  loc: dft.cpp:28
+:11  %tmp_2 = fsub float %tmp_s, %tmp_1
+
+ST_9: tmp_6 (48)  [5/5] 7.26ns  loc: dft.cpp:29
+:18  %tmp_6 = fadd float %tmp_4, %tmp_5
+
+
+ <State 10>: 7.26ns
+ST_10: tmp_2 (41)  [4/5] 7.26ns  loc: dft.cpp:28
+:11  %tmp_2 = fsub float %tmp_s, %tmp_1
+
+ST_10: tmp_6 (48)  [4/5] 7.26ns  loc: dft.cpp:29
+:18  %tmp_6 = fadd float %tmp_4, %tmp_5
+
+
+ <State 11>: 7.26ns
+ST_11: tmp_2 (41)  [3/5] 7.26ns  loc: dft.cpp:28
+:11  %tmp_2 = fsub float %tmp_s, %tmp_1
+
+ST_11: tmp_6 (48)  [3/5] 7.26ns  loc: dft.cpp:29
+:18  %tmp_6 = fadd float %tmp_4, %tmp_5
+
+
+ <State 12>: 7.26ns
+ST_12: tmp_2 (41)  [2/5] 7.26ns  loc: dft.cpp:28
+:11  %tmp_2 = fsub float %tmp_s, %tmp_1
+
+ST_12: dft_real_load (43)  [2/2] 3.25ns  loc: dft.cpp:28
+:13  %dft_real_load = load float* %dft_real_addr, align 4
+
+ST_12: tmp_6 (48)  [2/5] 7.26ns  loc: dft.cpp:29
+:18  %tmp_6 = fadd float %tmp_4, %tmp_5
+
+ST_12: dft_imag_load (50)  [2/2] 3.25ns  loc: dft.cpp:29
+:20  %dft_imag_load = load float* %dft_imag_addr, align 4
+
+
+ <State 13>: 7.26ns
+ST_13: tmp_2 (41)  [1/5] 7.26ns  loc: dft.cpp:28
+:11  %tmp_2 = fsub float %tmp_s, %tmp_1
+
+ST_13: dft_real_load (43)  [1/2] 3.25ns  loc: dft.cpp:28
+:13  %dft_real_load = load float* %dft_real_addr, align 4
+
+ST_13: tmp_6 (48)  [1/5] 7.26ns  loc: dft.cpp:29
+:18  %tmp_6 = fadd float %tmp_4, %tmp_5
+
+ST_13: dft_imag_load (50)  [1/2] 3.25ns  loc: dft.cpp:29
+:20  %dft_imag_load = load float* %dft_imag_addr, align 4
+
+
+ <State 14>: 7.26ns
+ST_14: tmp_3 (44)  [5/5] 7.26ns  loc: dft.cpp:28
+:14  %tmp_3 = fadd float %dft_real_load, %tmp_2
+
+ST_14: tmp_7 (51)  [5/5] 7.26ns  loc: dft.cpp:29
+:21  %tmp_7 = fadd float %dft_imag_load, %tmp_6
+
+
+ <State 15>: 7.26ns
+ST_15: tmp_3 (44)  [4/5] 7.26ns  loc: dft.cpp:28
+:14  %tmp_3 = fadd float %dft_real_load, %tmp_2
+
+ST_15: tmp_7 (51)  [4/5] 7.26ns  loc: dft.cpp:29
+:21  %tmp_7 = fadd float %dft_imag_load, %tmp_6
+
+
+ <State 16>: 7.26ns
+ST_16: tmp_3 (44)  [3/5] 7.26ns  loc: dft.cpp:28
+:14  %tmp_3 = fadd float %dft_real_load, %tmp_2
+
+ST_16: tmp_7 (51)  [3/5] 7.26ns  loc: dft.cpp:29
+:21  %tmp_7 = fadd float %dft_imag_load, %tmp_6
+
+
+ <State 17>: 7.26ns
+ST_17: tmp_3 (44)  [2/5] 7.26ns  loc: dft.cpp:28
+:14  %tmp_3 = fadd float %dft_real_load, %tmp_2
+
+ST_17: tmp_7 (51)  [2/5] 7.26ns  loc: dft.cpp:29
+:21  %tmp_7 = fadd float %dft_imag_load, %tmp_6
+
+
+ <State 18>: 7.26ns
+ST_18: tmp_3 (44)  [1/5] 7.26ns  loc: dft.cpp:28
+:14  %tmp_3 = fadd float %dft_real_load, %tmp_2
+
+ST_18: tmp_7 (51)  [1/5] 7.26ns  loc: dft.cpp:29
+:21  %tmp_7 = fadd float %dft_imag_load, %tmp_6
+
+
+ <State 19>: 3.25ns
+ST_19: StgValue_96 (30)  [1/1] 0.00ns  loc: dft.cpp:24
+:0  call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str3) nounwind
+
+ST_19: StgValue_97 (45)  [1/1] 3.25ns  loc: dft.cpp:28
+:15  store float %tmp_3, float* %dft_real_addr, align 4
+
+ST_19: StgValue_98 (52)  [1/1] 3.25ns  loc: dft.cpp:29
+:22  store float %tmp_7, float* %dft_imag_addr, align 4
+
+ST_19: StgValue_99 (53)  [1/1] 0.00ns  loc: dft.cpp:23
+:23  br label %3
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('n') with incoming values : ('n', dft.cpp:21) [9]  (1.77 ns)
+
+ <State 2>: 1.92ns
+The critical path consists of the following:
+	'phi' operation ('n') with incoming values : ('n', dft.cpp:21) [9]  (0 ns)
+	'add' operation ('n', dft.cpp:21) [13]  (1.92 ns)
+
+ <State 3>: 7.42ns
+The critical path consists of the following:
+	'phi' operation ('w') with incoming values : ('w', dft.cpp:23) [22]  (0 ns)
+	'mul' operation ('ind', dft.cpp:26) [31]  (4.17 ns)
+	'getelementptr' operation ('cos_coefficients_tab', dft.cpp:28) [33]  (0 ns)
+	'load' operation ('cos_coefficients_tab_3', dft.cpp:28) on array 'cos_coefficients_tab_1' [34]  (3.25 ns)
+
+ <State 4>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('cos_coefficients_tab_3', dft.cpp:28) on array 'cos_coefficients_tab_1' [34]  (3.25 ns)
+
+ <State 5>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_s', dft.cpp:28) [36]  (5.7 ns)
+
+ <State 6>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_s', dft.cpp:28) [36]  (5.7 ns)
+
+ <State 7>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_s', dft.cpp:28) [36]  (5.7 ns)
+
+ <State 8>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_s', dft.cpp:28) [36]  (5.7 ns)
+
+ <State 9>: 7.26ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_2', dft.cpp:28) [41]  (7.26 ns)
+
+ <State 10>: 7.26ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_2', dft.cpp:28) [41]  (7.26 ns)
+
+ <State 11>: 7.26ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_2', dft.cpp:28) [41]  (7.26 ns)
+
+ <State 12>: 7.26ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_2', dft.cpp:28) [41]  (7.26 ns)
+
+ <State 13>: 7.26ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_2', dft.cpp:28) [41]  (7.26 ns)
+
+ <State 14>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_3', dft.cpp:28) [44]  (7.26 ns)
+
+ <State 15>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_3', dft.cpp:28) [44]  (7.26 ns)
+
+ <State 16>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_3', dft.cpp:28) [44]  (7.26 ns)
+
+ <State 17>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_3', dft.cpp:28) [44]  (7.26 ns)
+
+ <State 18>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_3', dft.cpp:28) [44]  (7.26 ns)
+
+ <State 19>: 3.25ns
+The critical path consists of the following:
+	'store' operation (dft.cpp:28) of variable 'tmp_3', dft.cpp:28 on array 'dft_real' [45]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

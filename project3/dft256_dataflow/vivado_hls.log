@@ -1,0 +1,138 @@
+
+INFO: [HLS 200-10] Running 'E:/sdsoc171/SDx/2017.1/Vivado_HLS/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'c7benj' on host 'wes-server' (Windows NT_amd64 version 6.1) on Fri Nov 09 20:05:24 -0800 2018
+INFO: [HLS 200-10] In directory 'C:/Users/c7benj/Documents/wes237c/project3/dft_256_precomputed'
+INFO: [HLS 200-10] Opening project 'C:/Users/c7benj/Documents/wes237c/project3/dft_256_precomputed/hls'.
+INFO: [HLS 200-10] Adding design file 'coefficients256.h' to the project
+INFO: [HLS 200-10] Adding design file 'dft.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'dft.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'dft_test.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'out.gold.dat' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/c7benj/Documents/wes237c/project3/dft_256_precomputed/hls/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [HLS 200-10] Analyzing design file 'dft.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 107.344 ; gain = 48.227
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 107.344 ; gain = 48.227
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 107.430 ; gain = 48.313
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 107.430 ; gain = 48.313
+WARNING: [XFORM 203-105] Cannot partition array 'cos_coefficients_table' : incorrect partition factor 1.
+WARNING: [XFORM 203-105] Cannot partition array 'sin_coefficients_table' : incorrect partition factor 1.
+WARNING: [XFORM 203-105] Cannot partition array 'Stage1_real' (dft.cpp:81): incorrect partition factor 1.
+WARNING: [XFORM 203-105] Cannot partition array 'Stage1_imag' (dft.cpp:82): incorrect partition factor 1.
+WARNING: [XFORM 203-105] Cannot partition array 'Stage2_real' (dft.cpp:83): incorrect partition factor 1.
+WARNING: [XFORM 203-105] Cannot partition array 'Stage2_imag' (dft.cpp:84): incorrect partition factor 1.
+WARNING: [XFORM 203-105] Cannot partition array 'real_sample' (dft.cpp:77): incorrect partition factor 1.
+WARNING: [XFORM 203-105] Cannot partition array 'imag_sample' (dft.cpp:77): incorrect partition factor 1.
+WARNING: [XFORM 203-713] All the elements of global array 'Stage1_real' (dft.cpp:81) should be updated in process function 'dft1' (dft.cpp:8), otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'Stage1_imag' (dft.cpp:82) should be updated in process function 'dft1' (dft.cpp:8), otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'Stage2_real' (dft.cpp:83) should be updated in process function 'dft2' (dft.cpp:35), otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'Stage2_imag' (dft.cpp:84) should be updated in process function 'dft2' (dft.cpp:35), otherwise it may not be synthesized correctly.
+INFO: [XFORM 203-712] Applying dataflow to function 'top' (dft.cpp:77), detected/extracted 3 process function(s):
+	 'dft1'
+	 'dft2'
+	 'dft3'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 129.938 ; gain = 70.820
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 148.992 ; gain = 89.875
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'top' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 8.403 seconds; current allocated memory: 102.708 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.189 seconds; current allocated memory: 102.964 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.287 seconds; current allocated memory: 103.218 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.163 seconds; current allocated memory: 103.443 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.152 seconds; current allocated memory: 103.520 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.129 seconds; current allocated memory: 103.592 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.096 seconds; current allocated memory: 103.642 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.269 seconds; current allocated memory: 103.747 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'dft1_cos_coefficients_tab_1' to 'dft1_cos_coefficibkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dft1_sin_coefficients_tab_1' to 'dft1_sin_coefficicud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'top_faddfsub_32ns_32ns_32_5_full_dsp' to 'top_faddfsub_32nsdEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'top_fadd_32ns_32ns_32_5_full_dsp' to 'top_fadd_32ns_32neOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'top_fmul_32ns_32ns_32_4_max_dsp' to 'top_fmul_32ns_32nfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'top_fadd_32ns_32neOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_faddfsub_32nsdEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_fmul_32ns_32nfYi': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft1'.
+INFO: [HLS 200-111]  Elapsed time: 0.822 seconds; current allocated memory: 104.238 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'dft2_cos_coefficients_tab' to 'dft2_cos_coefficig8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dft2_sin_coefficients_tab' to 'dft2_sin_coefficihbi' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'top_faddfsub_32nsdEe' is changed to 'top_faddfsub_32nsdEe_x' due to conflict.
+WARNING: [RTGEN 206-101] RTL name 'top_fadd_32ns_32neOg' is changed to 'top_fadd_32ns_32neOg_x' due to conflict.
+WARNING: [RTGEN 206-101] RTL name 'top_fmul_32ns_32nfYi' is changed to 'top_fmul_32ns_32nfYi_x' due to conflict.
+INFO: [RTGEN 206-100] Generating core module 'top_fadd_32ns_32neOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_faddfsub_32nsdEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_fmul_32ns_32nfYi': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft2'.
+INFO: [HLS 200-111]  Elapsed time: 0.438 seconds; current allocated memory: 104.812 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft3'.
+INFO: [HLS 200-111]  Elapsed time: 0.377 seconds; current allocated memory: 105.080 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/real_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/imag_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/dft_real' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/dft_imag' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'top' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'top'.
+INFO: [HLS 200-111]  Elapsed time: 0.255 seconds; current allocated memory: 105.715 MB.
+INFO: [RTMG 210-279] Implementing memory 'dft1_cos_coefficibkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft1_sin_coefficicud_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'top_Stage1_real_memcore_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 158.684 ; gain = 99.566
+INFO: [SYSC 207-301] Generating SystemC RTL for top.
+INFO: [VHDL 208-304] Generating VHDL RTL for top.
+INFO: [VLOG 209-307] Generating Verilog RTL for top.
+INFO: [HLS 200-112] Total elapsed time: 14.655 seconds; peak allocated memory: 105.715 MB.

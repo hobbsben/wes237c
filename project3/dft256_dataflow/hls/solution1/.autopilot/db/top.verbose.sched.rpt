@@ -1,0 +1,194 @@
+
+
+================================================================
+== Vivado HLS Report for 'top'
+================================================================
+* Date:           Fri Nov  9 20:05:33 2018
+
+* Version:        2017.1 (Build 1846317 on Thu Jun 22 18:17:09 MDT 2017)
+* Project:        hls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      7.42|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+---------+--------+--------+----------+
+    |      Latency      |     Interval    | Pipeline |
+    |   min   |   max   |   min  |   max  |   Type   |
+    +---------+---------+--------+--------+----------+
+    |  1115141|  1115141|  557314|  557314| dataflow |
+    +---------+---------+--------+--------+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 6
+* Pipeline: 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 6, States = { 1 2 3 4 5 6 }
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: Stage1_real (15)  [1/1] 0.00ns  loc: dft.cpp:81
+:6  %Stage1_real = alloca [256 x float], align 4
+
+ST_1: Stage1_imag (16)  [1/1] 0.00ns  loc: dft.cpp:82
+:7  %Stage1_imag = alloca [256 x float], align 4
+
+ST_1: Stage2_real (17)  [1/1] 0.00ns  loc: dft.cpp:83
+:8  %Stage2_real = alloca [256 x float], align 4
+
+ST_1: Stage2_imag (18)  [1/1] 0.00ns  loc: dft.cpp:84
+:9  %Stage2_imag = alloca [256 x float], align 4
+
+ST_1: StgValue_11 (19)  [2/2] 0.00ns  loc: dft.cpp:86
+:10  call fastcc void @dft1([256 x float]* %real_sample, [256 x float]* %imag_sample, [256 x float]* %Stage1_real, [256 x float]* %Stage1_imag) nounwind
+
+
+ <State 2>: 0.00ns
+ST_2: StgValue_12 (19)  [1/2] 0.00ns  loc: dft.cpp:86
+:10  call fastcc void @dft1([256 x float]* %real_sample, [256 x float]* %imag_sample, [256 x float]* %Stage1_real, [256 x float]* %Stage1_imag) nounwind
+
+
+ <State 3>: 0.00ns
+ST_3: StgValue_13 (20)  [2/2] 0.00ns  loc: dft.cpp:87
+:11  call fastcc void @dft2([256 x float]* %Stage1_real, [256 x float]* %Stage1_imag, [256 x float]* %Stage2_real, [256 x float]* %Stage2_imag) nounwind
+
+
+ <State 4>: 0.00ns
+ST_4: StgValue_14 (20)  [1/2] 0.00ns  loc: dft.cpp:87
+:11  call fastcc void @dft2([256 x float]* %Stage1_real, [256 x float]* %Stage1_imag, [256 x float]* %Stage2_real, [256 x float]* %Stage2_imag) nounwind
+
+
+ <State 5>: 0.00ns
+ST_5: StgValue_15 (21)  [2/2] 0.00ns  loc: dft.cpp:88
+:12  call fastcc void @dft3([256 x float]* %Stage2_real, [256 x float]* %Stage2_imag, [256 x float]* %dft_real, [256 x float]* %dft_imag) nounwind
+
+
+ <State 6>: 0.00ns
+ST_6: StgValue_16 (9)  [1/1] 0.00ns  loc: dft.cpp:79
+:0  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1) nounwind
+
+ST_6: StgValue_17 (10)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap([256 x float]* %real_sample) nounwind, !map !20
+
+ST_6: StgValue_18 (11)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap([256 x float]* %imag_sample) nounwind, !map !26
+
+ST_6: StgValue_19 (12)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap([256 x float]* %dft_real) nounwind, !map !30
+
+ST_6: StgValue_20 (13)  [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap([256 x float]* %dft_imag) nounwind, !map !34
+
+ST_6: StgValue_21 (14)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @top_str) nounwind
+
+ST_6: StgValue_22 (21)  [1/2] 0.00ns  loc: dft.cpp:88
+:12  call fastcc void @dft3([256 x float]* %Stage2_real, [256 x float]* %Stage2_imag, [256 x float]* %dft_real, [256 x float]* %dft_imag) nounwind
+
+ST_6: StgValue_23 (22)  [1/1] 0.00ns  loc: dft.cpp:89
+:13  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

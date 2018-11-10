@@ -1,0 +1,184 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'top'" level="0">
+<item name = "Date">Fri Nov  9 20:05:35 2018
+</item>
+<item name = "Version">2017.1 (Build 1846317 on Thu Jun 22 18:17:09 MDT 2017)</item>
+<item name = "Project">hls</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">10.00</item>
+<item name = "Clock uncertainty (ns)">1.25</item>
+<item name = "Estimated clock period (ns)">7.42</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">1115141, 1115141, 557314, 557314, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="dft2_U0">dft2, 557313, 557313, 557313, 557313, none</column>
+<column name="dft1_U0">dft1, 557313, 557313, 557313, 557313, none</column>
+<column name="dft3_U0">dft3, 513, 513, 513, 513, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 104</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">4, 32, 2912, 4815</column>
+<column name="Memory">4, -, 0, 0</column>
+<column name="Multiplexer">-, -, -, 36</column>
+<column name="Register">-, -, 4, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">2, 14, 2, 9</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="dft1_U0">dft1, 2, 16, 1452, 2369</column>
+<column name="dft2_U0">dft2, 2, 16, 1429, 2370</column>
+<column name="dft3_U0">dft3, 0, 0, 31, 76</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="Stage1_real_U">top_Stage1_real, 1, 0, 0, 256, 32, 2, 16384</column>
+<column name="Stage1_imag_U">top_Stage1_real, 1, 0, 0, 256, 32, 2, 16384</column>
+<column name="Stage2_real_U">top_Stage1_real, 1, 0, 0, 256, 32, 2, 16384</column>
+<column name="Stage2_imag_U">top_Stage1_real, 1, 0, 0, 256, 32, 2, 16384</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_channel_done_Stage1_imag">and, 0, 0, 8, 1, 1</column>
+<column name="ap_channel_done_Stage1_real">and, 0, 0, 8, 1, 1</column>
+<column name="ap_channel_done_Stage2_imag">and, 0, 0, 8, 1, 1</column>
+<column name="ap_channel_done_Stage2_real">and, 0, 0, 8, 1, 1</column>
+<column name="ap_idle">and, 0, 0, 8, 1, 1</column>
+<column name="dft1_U0_ap_continue">and, 0, 0, 8, 1, 1</column>
+<column name="dft2_U0_ap_continue">and, 0, 0, 8, 1, 1</column>
+<column name="dft2_U0_ap_start">and, 0, 0, 8, 1, 1</column>
+<column name="dft3_U0_ap_start">and, 0, 0, 8, 1, 1</column>
+<column name="ap_sync_channel_write_Stage1_imag">or, 0, 0, 8, 1, 1</column>
+<column name="ap_sync_channel_write_Stage1_real">or, 0, 0, 8, 1, 1</column>
+<column name="ap_sync_channel_write_Stage2_imag">or, 0, 0, 8, 1, 1</column>
+<column name="ap_sync_channel_write_Stage2_real">or, 0, 0, 8, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_sync_reg_channel_write_Stage1_imag">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_Stage1_real">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_Stage2_imag">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_Stage2_real">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_sync_reg_channel_write_Stage1_imag">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_Stage1_real">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_Stage2_imag">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_Stage2_real">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, top, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, top, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, top, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, top, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, top, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, top, return value</column>
+<column name="real_sample_address0">out, 8, ap_memory, real_sample, array</column>
+<column name="real_sample_ce0">out, 1, ap_memory, real_sample, array</column>
+<column name="real_sample_d0">out, 32, ap_memory, real_sample, array</column>
+<column name="real_sample_q0">in, 32, ap_memory, real_sample, array</column>
+<column name="real_sample_we0">out, 1, ap_memory, real_sample, array</column>
+<column name="real_sample_address1">out, 8, ap_memory, real_sample, array</column>
+<column name="real_sample_ce1">out, 1, ap_memory, real_sample, array</column>
+<column name="real_sample_d1">out, 32, ap_memory, real_sample, array</column>
+<column name="real_sample_q1">in, 32, ap_memory, real_sample, array</column>
+<column name="real_sample_we1">out, 1, ap_memory, real_sample, array</column>
+<column name="imag_sample_address0">out, 8, ap_memory, imag_sample, array</column>
+<column name="imag_sample_ce0">out, 1, ap_memory, imag_sample, array</column>
+<column name="imag_sample_d0">out, 32, ap_memory, imag_sample, array</column>
+<column name="imag_sample_q0">in, 32, ap_memory, imag_sample, array</column>
+<column name="imag_sample_we0">out, 1, ap_memory, imag_sample, array</column>
+<column name="imag_sample_address1">out, 8, ap_memory, imag_sample, array</column>
+<column name="imag_sample_ce1">out, 1, ap_memory, imag_sample, array</column>
+<column name="imag_sample_d1">out, 32, ap_memory, imag_sample, array</column>
+<column name="imag_sample_q1">in, 32, ap_memory, imag_sample, array</column>
+<column name="imag_sample_we1">out, 1, ap_memory, imag_sample, array</column>
+<column name="dft_real_address0">out, 8, ap_memory, dft_real, array</column>
+<column name="dft_real_ce0">out, 1, ap_memory, dft_real, array</column>
+<column name="dft_real_d0">out, 32, ap_memory, dft_real, array</column>
+<column name="dft_real_q0">in, 32, ap_memory, dft_real, array</column>
+<column name="dft_real_we0">out, 1, ap_memory, dft_real, array</column>
+<column name="dft_real_address1">out, 8, ap_memory, dft_real, array</column>
+<column name="dft_real_ce1">out, 1, ap_memory, dft_real, array</column>
+<column name="dft_real_d1">out, 32, ap_memory, dft_real, array</column>
+<column name="dft_real_q1">in, 32, ap_memory, dft_real, array</column>
+<column name="dft_real_we1">out, 1, ap_memory, dft_real, array</column>
+<column name="dft_imag_address0">out, 8, ap_memory, dft_imag, array</column>
+<column name="dft_imag_ce0">out, 1, ap_memory, dft_imag, array</column>
+<column name="dft_imag_d0">out, 32, ap_memory, dft_imag, array</column>
+<column name="dft_imag_q0">in, 32, ap_memory, dft_imag, array</column>
+<column name="dft_imag_we0">out, 1, ap_memory, dft_imag, array</column>
+<column name="dft_imag_address1">out, 8, ap_memory, dft_imag, array</column>
+<column name="dft_imag_ce1">out, 1, ap_memory, dft_imag, array</column>
+<column name="dft_imag_d1">out, 32, ap_memory, dft_imag, array</column>
+<column name="dft_imag_q1">in, 32, ap_memory, dft_imag, array</column>
+<column name="dft_imag_we1">out, 1, ap_memory, dft_imag, array</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">3.25</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+<column name="'Stage1_real', dft.cpp:81">alloca, 3.25, 3.25, -, -, -, -, -, -, -, -, -, -, -</column>
+</table>
+</item>
+</section>
+</profile>

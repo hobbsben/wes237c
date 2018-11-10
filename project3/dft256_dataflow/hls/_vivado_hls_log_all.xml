@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] RTL name 'top_fmul_32ns_32nfYi' is changed to 'top_fmul_32ns_32nfYi_x' due to conflict." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:34.564-0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] RTL name 'top_fadd_32ns_32neOg' is changed to 'top_fadd_32ns_32neOg_x' due to conflict." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:34.558-0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] RTL name 'top_faddfsub_32nsdEe' is changed to 'top_faddfsub_32nsdEe_x' due to conflict." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:34.553-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'Stage2_imag' (dft.cpp:84) should be updated in process function 'dft2' (dft.cpp:35), otherwise it may not be synthesized correctly." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.097-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'Stage2_real' (dft.cpp:83) should be updated in process function 'dft2' (dft.cpp:35), otherwise it may not be synthesized correctly." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.093-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'Stage1_imag' (dft.cpp:82) should be updated in process function 'dft1' (dft.cpp:8), otherwise it may not be synthesized correctly." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.089-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'Stage1_real' (dft.cpp:81) should be updated in process function 'dft1' (dft.cpp:8), otherwise it may not be synthesized correctly." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.085-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'imag_sample' (dft.cpp:77): incorrect partition factor 1." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.081-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'real_sample' (dft.cpp:77): incorrect partition factor 1." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.024-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'Stage2_imag' (dft.cpp:84): incorrect partition factor 1." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.020-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'Stage2_real' (dft.cpp:83): incorrect partition factor 1." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.016-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'Stage1_imag' (dft.cpp:82): incorrect partition factor 1." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.014-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'Stage1_real' (dft.cpp:81): incorrect partition factor 1." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.011-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'sin_coefficients_table' : incorrect partition factor 1." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.006-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'cos_coefficients_table' : incorrect partition factor 1." projectName="hls" solutionName="solution1" date="2018-11-09T20:05:31.002-0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

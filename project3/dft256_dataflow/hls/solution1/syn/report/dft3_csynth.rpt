@@ -1,0 +1,150 @@
+
+
+================================================================
+== Vivado HLS Report for 'dft3'
+================================================================
+* Date:           Fri Nov  9 20:05:35 2018
+
+* Version:        2017.1 (Build 1846317 on Thu Jun 22 18:17:09 MDT 2017)
+* Project:        hls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      6.51|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  513|  513|  513|  513|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------+-----+-----+----------+-----------+-----------+------+----------+
+        |            |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- loop_in3  |  512|  512|         2|          -|          -|   256|    no    |
+        +------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     37|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     39|
+|Register         |        -|      -|      31|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|      31|     76|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------+----------+-------+---+----+------------+------------+
+    |   Variable Name   | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------+----------+-------+---+----+------------+------------+
+    |w_1_fu_97_p2       |     +    |      0|  0|  16|           9|           1|
+    |exitcond_fu_91_p2  |   icmp   |      0|  0|  13|           9|          10|
+    |ap_block_state1    |    or    |      0|  0|   8|           1|           1|
+    +-------------------+----------+-------+---+----+------------+------------+
+    |Total              |          |      0|  0|  37|          19|          12|
+    +-------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_NS_fsm  |  21|          4|    1|          4|
+    |ap_done    |   9|          2|    1|          2|
+    |w_reg_74   |   9|          2|    9|         18|
+    +-----------+----+-----------+-----+-----------+
+    |Total      |  39|          8|   11|         24|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------+---+----+-----+-----------+
+    |      Name      | FF| LUT| Bits| Const Bits|
+    +----------------+---+----+-----+-----------+
+    |ap_CS_fsm       |  3|   0|    3|          0|
+    |ap_done_reg     |  1|   0|    1|          0|
+    |w_1_reg_112     |  9|   0|    9|          0|
+    |w_cast_reg_103  |  9|   0|   32|         23|
+    |w_reg_74        |  9|   0|    9|          0|
+    +----------------+---+----+-----+-----------+
+    |Total           | 31|   0|   54|         23|
+    +----------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  | Source Object|    C Type    |
++----------------------+-----+-----+------------+--------------+--------------+
+|ap_clk                |  in |    1| ap_ctrl_hs |     dft3     | return value |
+|ap_rst                |  in |    1| ap_ctrl_hs |     dft3     | return value |
+|ap_start              |  in |    1| ap_ctrl_hs |     dft3     | return value |
+|ap_done               | out |    1| ap_ctrl_hs |     dft3     | return value |
+|ap_continue           |  in |    1| ap_ctrl_hs |     dft3     | return value |
+|ap_idle               | out |    1| ap_ctrl_hs |     dft3     | return value |
+|ap_ready              | out |    1| ap_ctrl_hs |     dft3     | return value |
+|real_sample_address0  | out |    8|  ap_memory |  real_sample |     array    |
+|real_sample_ce0       | out |    1|  ap_memory |  real_sample |     array    |
+|real_sample_q0        |  in |   32|  ap_memory |  real_sample |     array    |
+|imag_sample_address0  | out |    8|  ap_memory |  imag_sample |     array    |
+|imag_sample_ce0       | out |    1|  ap_memory |  imag_sample |     array    |
+|imag_sample_q0        |  in |   32|  ap_memory |  imag_sample |     array    |
+|dft_real_address0     | out |    8|  ap_memory |   dft_real   |     array    |
+|dft_real_ce0          | out |    1|  ap_memory |   dft_real   |     array    |
+|dft_real_we0          | out |    1|  ap_memory |   dft_real   |     array    |
+|dft_real_d0           | out |   32|  ap_memory |   dft_real   |     array    |
+|dft_imag_address0     | out |    8|  ap_memory |   dft_imag   |     array    |
+|dft_imag_ce0          | out |    1|  ap_memory |   dft_imag   |     array    |
+|dft_imag_we0          | out |    1|  ap_memory |   dft_imag   |     array    |
+|dft_imag_d0           | out |   32|  ap_memory |   dft_imag   |     array    |
++----------------------+-----+-----+------------+--------------+--------------+
+

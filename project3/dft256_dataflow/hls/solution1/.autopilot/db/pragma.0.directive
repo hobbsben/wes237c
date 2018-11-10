@@ -1,0 +1,91 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="dft1" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="cos_coefficients_table"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dft1" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="sin_coefficients_table"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dft1" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="real_sample"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dft1" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="imag_sample"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dft1" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="dft_real"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dft1" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="dft_imag"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dft2" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="cos_coefficients_table"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dft2" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="sin_coefficients_table"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dft2" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="real_sample"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dft2" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="imag_sample"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dft2" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="dft_real"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dft2" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="dft_imag"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="top" label="">
+<pragma name="DATAFLOW"/>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>
